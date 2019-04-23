@@ -21,6 +21,8 @@ A response `403 Forbidden` will be returned if the user is unauthorised or incor
 
 where `employer_id` - employer id, you can find the employer's id in the [current user info](me.md#employer-info).
 
+request applies [standard pagination parameters](/docs_eng/general.md#pagination) page и per_page (per_page can't be more 100).
+
 ### Response
 
 Successful response is returned with `200 OK` code and contains:
@@ -42,9 +44,15 @@ Successful response is returned with `200 OK` code and contains:
                 }
             ]
         }
-    ]
+    ],
+    "found": 1,
+    "page": 0,
+    "pages": 1,
+    "per_page": 20
 }
 ```
+
+The response includes [standard pagination fields](general.md#pagination)
 
 Each element of `items` has the following fields:
 
